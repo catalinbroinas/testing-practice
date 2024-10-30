@@ -17,8 +17,33 @@ function Calculator() {
         return num1 + num2;
     };
 
+    const subtract = (num1, num2) => {
+        const error = validateInputs(num1, num2);
+        if (error) return error;
+
+        return num1 - num2;
+    };
+
+    const divide = (num1, num2) => {
+        const error = validateInputs(num1, num2);
+        if (error) return error;
+        if (num2 === 0) return 'Cannot divide by zero';
+
+        return num1 / num2;
+    };
+
+    const multiply = (num1, num2) => {
+        const error = validateInputs(num1, num2);
+        if (error) return error;
+
+        return num1 * num2;
+    };
+
     return {
-        add
+        add,
+        subtract,
+        divide,
+        multiply
     };
 }
 
