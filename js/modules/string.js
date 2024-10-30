@@ -1,0 +1,5 @@
+function StringUtilities() {
+
+}
+
+export { StringUtilities };
