@@ -6,6 +6,9 @@ function Calculator() {
         if (typeof num1 !== 'number' || typeof num2 !== 'number') {
             return 'Please introduce two numbers';
         }
+        if (isNaN(num1) || isNaN(num2) || !isFinite(num1) || !isFinite(num2)) {
+            return 'Please introduce two numbers';
+        }
 
         return null;
     };
@@ -40,6 +43,7 @@ function Calculator() {
     };
 
     return {
+        validateInputs,
         add,
         subtract,
         divide,
