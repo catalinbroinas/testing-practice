@@ -8,8 +8,16 @@ function StringUtilities() {
         return `${firstChar}${restOfText}`;
     };
 
+    const reverseString = (text) => {
+        if (!text) return 'Missed data';
+        if (typeof text !== 'string') return 'Please introduce a string';
+
+        return text.split('').reverse().join('');
+    };
+
     return {
-        capitalize
+        capitalize,
+        reverseString
     };
 }
 

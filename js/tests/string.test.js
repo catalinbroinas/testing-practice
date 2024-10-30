@@ -1,6 +1,6 @@
 import { StringUtilities } from "../modules/string.js";
 
-describe('String methods', () => {
+describe('Capitalize string method', () => {
     const { capitalize } = StringUtilities();
 
     test('Capitalize single letter', () => {
@@ -37,5 +37,45 @@ describe('String methods', () => {
 
     test('Capitalize object', () => {
         expect(capitalize({})).toBe('Please introduce a string');
+    });
+});
+
+describe('Reverse string method', () => {
+    const { reverseString } = StringUtilities();
+
+    test('Revers single letter', () => {
+        expect(reverseString('a')).toMatch(/a/);
+    });
+
+    test('Reverse single word', () => {
+        expect(reverseString('hello')).toMatch(/olleh/);
+    });
+
+    test('Reverse a phrase', () => {
+        expect(reverseString('this is')).toMatch(/si siht/);
+    });
+
+    test('Reverse a number (as string)', () => {
+        expect(reverseString('2')).toMatch(/2/);
+    });
+
+    test('Reverse an empty string', () => {
+        expect(reverseString()).toBe('Missed data');
+    });
+
+    test('Reverse an empty string', () => {
+        expect(reverseString('')).toBe('Missed data');
+    });
+
+    test('Reverse null value', () => {
+        expect(reverseString(null)).toBe('Missed data');
+    });
+
+    test('Reverse a number', () => {
+        expect(reverseString(2)).toBe('Please introduce a string');
+    });
+
+    test('Reverse object', () => {
+        expect(reverseString({})).toBe('Please introduce a string');
     });
 });
