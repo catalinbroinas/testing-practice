@@ -9,12 +9,12 @@ const { capitalize, reverseString } = StringUtilities();
 const { add, subtract, divide, multiply } = Calculator();
 
 // Capitalize
-const text = 'smith';
+let text = 'smith';
 console.log(`Original text: ${text}. Capitalize: ${capitalize(text)}.`);
 
 // Reverse string
-const rev = 'Hello';
-console.log(`Original text: ${rev}. Reversed text: ${reverseString(rev)}.`);
+text = 'Hello';
+console.log(`Original text: ${text}. Reversed text: ${reverseString(text)}.`);
 
 // Calculator: add method
 let num1 = 12;

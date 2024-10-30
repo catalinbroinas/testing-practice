@@ -23,6 +23,7 @@ function StringUtilities() {
     };
 
     return {
+        validateInput,
         capitalize,
         reverseString
     };
