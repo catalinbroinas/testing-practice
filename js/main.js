@@ -3,7 +3,7 @@
 // ========================
 
 import { StringUtilities } from "./modules/string.js";
-import { MathUtilities } from "./modules/math.js";
+import { Calculator } from "./modules/math.js";
 
 const { capitalize, reverseString } = StringUtilities();
 
