@@ -51,4 +51,34 @@ function Calculator() {
     };
 }
 
-export { Calculator };
+function AnalyzeArray(arr) {
+    const validateInput = (arr) => {
+        if (!Array.isArray(arr) || !arr.length) {
+            throw new Error('Please provide a non-empty array');
+        }
+
+        if (arr.some(value => typeof value !== 'number')) {
+            throw new Error('Array must contain only numbers');
+        }
+
+        return true;
+    };
+
+    const getAverage = (arr) => arr.reduce((sum, currentValue) => sum + currentValue, 0) / arr.length;
+    const getMin = (arr) => Math.min(...arr);
+    const getMax = (arr) => Math.max(...arr);
+    const getLength = (arr) => arr.length;
+
+    if (validateInput(arr)) {
+        return {
+            average: getAverage(arr),
+            min: getMin(arr),
+            max: getMax(arr),
+            length: getLength(arr)
+        };
+    }
+
+    return null;
+}
+
+export { Calculator, AnalyzeArray };

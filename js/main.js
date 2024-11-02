@@ -3,7 +3,7 @@
 // ========================
 
 import { StringUtilities } from "./modules/string.js";
-import { Calculator } from "./modules/math.js";
+import { AnalyzeArray, Calculator } from "./modules/math.js";
 
 const { capitalize, reverseString, caesarCipher } = StringUtilities();
 const { add, subtract, divide, multiply } = Calculator();
@@ -38,3 +38,7 @@ console.log(`${num1} + ${num2} = ${multiply(num1, num2)}`);
 num1 = 100;
 num2 = 5;
 console.log(`${num1} / ${num2} = ${divide(num1, num2)}`);
+
+// Analyze  Array
+const myArr = [1, 8, 3, 4, 2, 6];
+console.log(AnalyzeArray(myArr));
