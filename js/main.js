@@ -5,7 +5,7 @@
 import { StringUtilities } from "./modules/string.js";
 import { Calculator } from "./modules/math.js";
 
-const { capitalize, reverseString } = StringUtilities();
+const { capitalize, reverseString, caesarCipher } = StringUtilities();
 const { add, subtract, divide, multiply } = Calculator();
 
 // Capitalize
@@ -15,6 +15,9 @@ console.log(`Original text: ${text}. Capitalize: ${capitalize(text)}.`);
 // Reverse string
 text = 'Hello';
 console.log(`Original text: ${text}. Reversed text: ${reverseString(text)}.`);
+
+// Caesar Cipher string 
+console.log(`Original text: ${text}. Function 'caesarCipher' with 'shift: 3'  return: ${caesarCipher(text, 3)}.`);
 
 // Calculator: add method
 let num1 = 12;
