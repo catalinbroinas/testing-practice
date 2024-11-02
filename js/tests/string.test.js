@@ -63,3 +63,39 @@ describe('Reverse string method', () => {
         expect(reverseString('2')).toMatch(/2/);
     });
 });
+
+describe('Caesar Cipher string method', () => {
+    const { caesarCipher } = StringUtilities();
+
+    test('Caesar Cipher single letter', () => {
+        expect(caesarCipher('a', 3)).toBe('d');
+    });
+
+    test('Caesar Cipher single word', () => {
+        expect(caesarCipher('hello', 3)).toBe('khoor');
+    });
+
+    test('Caesar Cipher a phrase', () => {
+        expect(caesarCipher('Hello, world!', 3)).toBe('Khoor, zruog!');
+    });
+
+    test('Caesar Cipher with negative shift', () => {
+        expect(caesarCipher('hello', -3)).toBe('ebiil');
+    });
+
+    test('Caesar Cipher with shift larger than 26', () => {
+        expect(caesarCipher('hello', 29)).toBe('khoor');
+    });
+
+    test('Caesar Cipher with shift of zero', () => {
+        expect(caesarCipher('hello', 0)).toBe('hello');
+    });
+
+    test('Caesar Cipher with non-alphabetic characters', () => {
+        expect(caesarCipher('1234 !@#$', 5)).toBe('1234 !@#$');
+    });
+
+    test('Caesar Cipher with mixed case', () => {
+        expect(caesarCipher('Hello World!', 3)).toBe('Khoor Zruog!');
+    });
+});
