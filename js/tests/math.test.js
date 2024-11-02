@@ -1,4 +1,4 @@
-import { Calculator } from "../modules/math.js";
+import { AnalyzeArray, Calculator } from "../modules/math.js";
 
 describe('Calculator: data validation', () => {
     const { validateInputs } = Calculator();
@@ -149,5 +149,31 @@ describe('Calculator: divide method', () => {
 
     test('Divides two decimal numbers', () => {
         expect(divide(5.5, 2.2)).toBeCloseTo(2.5);
+    });
+});
+
+describe('AnalyzeArray function', () => {
+    test('throws error for empty array', () => {
+        expect(() => AnalyzeArray([])).toThrow('Please provide a non-empty array');
+    });
+
+    test('throws error for non-array input', () => {
+        expect(() => AnalyzeArray(1, 2)).toThrow('Please provide a non-empty array');
+    });
+
+    test('throws error if array contains non-numeric values', () => {
+        expect(() => AnalyzeArray([1, 2, 'yes'])).toThrow('Array must contain only numbers');
+    });
+
+    test('returns correct analysis for valid array', () => {
+        expect(AnalyzeArray([1, 8, 3, 4, 2, 6])).toEqual({ average: 4, min: 1, max: 8, length: 6 });
+    });
+
+    test('handles array with negative numbers', () => {
+        expect(AnalyzeArray([-1, -5, -3, -4])).toEqual({ average: -3.25, min: -5, max: -1, length: 4 });
+    });
+
+    test('handles array with decimal numbers', () => {
+        expect(AnalyzeArray([1.5, 2.5, 3.5])).toEqual({ average: 2.5, min: 1.5, max: 3.5, length: 3 });
     });
 });
